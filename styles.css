@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+header {
+    background: #1f1f1f;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 1rem;
+}
+
+.nav-links a {
+    border-radius: 5px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: #6200ea;
+    border-radius: 5px;
+}
+
+#hero {
+    height: 100vh;
+    background: linear-gradient(to bottom, #121212, #1f1f1f);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 60px; /* To offset fixed header */
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.btn {
+    background: #6200ea;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    animation: fadeInUp 1.5s ease-out;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background: #3700b3;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    animation: bounce 2s infinite;
+}
+
+.scroll-down a {
+    color: #ffffff;
+    font-size: 2rem;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+#about, #download, #faq {
+    padding: 4rem 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.download-options {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.download-option {
+    flex: 1 1 200px;
+    margin: 1rem;
+    padding: 1.5rem;
+    background: #1f1f1f;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    text-align: center;
+}
+
+.download-option:hover {
+    transform: translateY(-10px);
+    background: #2a2a2a;
+}
+
+.download-option i {
+    margin-bottom: 1rem;
+    color: #6200ea;
+}
+
+.download-option h3 {
+    margin-bottom: 1rem;
+}
+
+.faq-item {
+    margin-bottom: 2rem;
+}
+
+.faq-question {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question:before {
+    content: '+';
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.faq-answer {
+    display: none;
+    padding: 1rem 0;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.faq-answer p {
+    font-size: 1.2rem;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+#thank-you-message {
+    margin-top: 20px;
+    color: #00e676;
+    display: none;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#contact input, #contact textarea {
+    padding: 1rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background: #2a2a2a;
+    color: #ffffff;
+}
+
+#contact button {
+    background: #6200ea;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* Add this animation for faq-answer */
+.faq-answer {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+
+#contact button:hover {
+    background: #3700b3;
+}
+
+footer {
+    background: #1f1f1f;
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+footer .socials {
+    margin-bottom: 1rem;
+}
+
+footer .socials a {
+    color: #ffffff;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+footer .socials a:hover {
+    color: #6200ea;
+}
